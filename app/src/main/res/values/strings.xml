@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DASHer</string>
+    <string name="title_activity_start_play">StartPlay</string>
+    <string name="title_activity_qrscan">QRScanActivity</string>
+</resources>
