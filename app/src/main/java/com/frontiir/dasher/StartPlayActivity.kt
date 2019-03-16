@@ -24,14 +24,13 @@ class StartPlayActivity : AppCompatActivity() {
         override fun onReceive(context: Context, intent: Intent) {
 
             LocalBroadcastManager.getInstance(context).unregisterReceiver(this)
-
+            editText!!.setText("");
             try {
                 val bundle = intent.extras
 
                 if (bundle != null) {
 
                     when (intent.getStringExtra(QRScanActivity.KEY)) {
-
                         QRScanActivity.KEY_VALUE -> editText!!.setText(intent.getStringExtra(QRScanActivity.MESSAGE))
                     }
                 }
@@ -48,7 +47,7 @@ class StartPlayActivity : AppCompatActivity() {
         editText = findViewById<View>(R.id.edt_url) as EditText
         btnUrl = findViewById<View>(R.id.btn_url) as Button
         igvQr = findViewById<View>(R.id.igv_qr_camera) as ImageView
-
+        editText!!.setText("https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8");
         context = this
         btnUrl!!.setOnClickListener {
             val intent = Intent(context, PlayerActivity::class.java)
